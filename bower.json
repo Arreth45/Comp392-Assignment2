@@ -1,0 +1,25 @@
+{
+  "name": "Comp392-Assignment 2- Solar System",
+  "authors": [
+    "Arreth45 <arreth45@gmail.com>"
+  ],
+  "description": "Advanced Graphics Assignment 2",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "Scripts/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "dat-gui": "~0.5.1",
+    "stats.js": "*",
+    "three.js": "~0.73.0",
+    "threex.colliders": "*"
+  }
+}
