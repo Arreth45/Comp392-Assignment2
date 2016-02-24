@@ -37,11 +37,11 @@ var step: number = 0;
 //sun
 var sun: Mesh;
 
-var r1:Object3D;
-var r2:Object3D;
-var r3:Object3D;
-var r4:Object3D;
-var r5:Object3D;
+var r1: Object3D;
+var r2: Object3D;
+var r3: Object3D;
+var r4: Object3D;
+var r5: Object3D;
 
 //planets
 var planet1: Mesh;
@@ -68,7 +68,7 @@ function init() {
     
     //add sun
     sun = new gameObject(
-        new SphereGeometry(2),
+        new SphereGeometry(2, 32, 32),
         new LambertMaterial({ color: 0xffff00 }),
         0, 0, 0);
 
@@ -80,19 +80,19 @@ function init() {
     r3 = new Object3D();
     r4 = new Object3D();
     r5 = new Object3D();
-    
-    r1.position.set(0,0,0);
-    r2.position.set(0,0,0);
-    r3.position.set(0,0,0);
-    r4.position.set(0,0,0);
-    r5.position.set(0,0,0);
-    
+
+    r1.position.set(0, 0, 0);
+    r2.position.set(0, 0, 0);
+    r3.position.set(0, 0, 0);
+    r4.position.set(0, 0, 0);
+    r5.position.set(0, 0, 0);
+
     sun.add(r1);
     sun.add(r2);
     sun.add(r3);
     sun.add(r4);
     sun.add(r5);
-    
+
     planet1 = new gameObject(
         new SphereGeometry(1),
         new LambertMaterial({ color: 0xe79b61 }),
@@ -151,34 +151,36 @@ function init() {
     
     // add controls
     gui = new GUI();
+    control = new Control(sun);
 
     // Add framerate stats
     addStatsObject();
     console.log("Added Stats to scene...");
 
     document.body.appendChild(renderer.domElement);
+    document.addEventListener('onKeyDown', onKeyDown, false);
     gameLoop(); // render the scene	   
 }
 
-function onKeyDown ( event ) {
+function onKeyDown(event) {
 
-				switch( event.keyCode ) {
+				switch (event.keyCode) {
 
-					case 79: /*O*/
+        case 79: /*O*/
 
-						camera.lookAt(planet3.position);
+            camera.lookAt(planet3.position);
 
-						break;
+            break;
 
-					case 80: /*P*/
-                    
-                    camera.lookAt(sun.position);
+        case 80: /*P*/
 
-						break;
+            camera.lookAt(sun.position);
+
+            break;
 
 				}
 
-			}
+}
 
 function addStatsObject() {
     stats = new Stats();
@@ -192,7 +194,7 @@ function addStatsObject() {
 function gameLoop(): void {
     stats.update();
 
-//orbit of the planets
+    //orbit of the planets
     r1.rotation.y += 0.07;
     r2.rotation.y += 0.06;
     r3.rotation.y += 0.05;

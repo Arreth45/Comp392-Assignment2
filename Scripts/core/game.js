@@ -55,7 +55,7 @@ function init() {
     scene.add(axes);
     console.log("Added Axis Helper to scene...");
     //add sun
-    sun = new gameObject(new SphereGeometry(2), new LambertMaterial({ color: 0xffff00 }), 0, 0, 0);
+    sun = new gameObject(new SphereGeometry(2, 32, 32), new LambertMaterial({ color: 0xffff00 }), 0, 0, 0);
     scene.add(sun);
     //rotation game objects
     r1 = new Object3D();
@@ -99,10 +99,12 @@ function init() {
     console.log("Added a SpotLight Light to Scene");
     // add controls
     gui = new GUI();
+    control = new Control(sun);
     // Add framerate stats
     addStatsObject();
     console.log("Added Stats to scene...");
     document.body.appendChild(renderer.domElement);
+    document.addEventListener('onKeyDown', onKeyDown, false);
     gameLoop(); // render the scene	   
 }
 function onKeyDown(event) {

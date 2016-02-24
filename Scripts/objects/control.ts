@@ -8,11 +8,9 @@
 module objects {
     // CONTROL CLASS ++++++++++++++++++++++++++++++++++++++++++
     export class Control { 
-        //PUBLIC INSTANCE VARIABLES +++++++++++++++++++++++++++
-        public rotationSpeed: number; 
+        //PUBLIC INSTANCE VARIABLES +++++++++++++++++++++++++++ 
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++
-        constructor(rotationSpeed: number) {
-            this.rotationSpeed = rotationSpeed;
+        constructor(public target:Mesh) {
         }
         //PUBLIC METHODS +++++++++++++++++++++++++++++++++++++++
     }
