@@ -10,7 +10,7 @@ module objects {
     export class Control { 
         //PUBLIC INSTANCE VARIABLES +++++++++++++++++++++++++++ 
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++
-        constructor(public target:Mesh) {
+        constructor(public target:Text) {
         }
         //PUBLIC METHODS +++++++++++++++++++++++++++++++++++++++
     }

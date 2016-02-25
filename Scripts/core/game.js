@@ -46,7 +46,6 @@ var planet3;
 var planet4;
 var planet5;
 var moon;
-var cameraPosition;
 function init() {
     scene = new Scene();
     setupRenderer();
@@ -99,23 +98,25 @@ function init() {
     console.log("Added a SpotLight Light to Scene");
     // add controls
     gui = new GUI();
-    control = new Control(sun);
+    var zoomIn = { add: function () {
+            camera.position = new Vector3(-13, 0, 0);
+            planet3.add(camera);
+            camera.lookAt(planet3.position);
+        } };
+    var zoomOut = { add: function () {
+            planet3.remove(camera);
+            camera.position.x = -20;
+            camera.position.y = 25;
+            camera.position.z = 20;
+            camera.lookAt(new Vector3(5, 0, 0));
+        } };
+    gui.add(zoomIn, 'add');
+    gui.add(zoomOut, 'add');
     // Add framerate stats
     addStatsObject();
     console.log("Added Stats to scene...");
     document.body.appendChild(renderer.domElement);
-    document.addEventListener('onKeyDown', onKeyDown, false);
     gameLoop(); // render the scene	   
-}
-function onKeyDown(event) {
-    switch (event.keyCode) {
-        case 79:
-            camera.lookAt(planet3.position);
-            break;
-        case 80:
-            camera.lookAt(sun.position);
-            break;
-    }
 }
 function addStatsObject() {
     stats = new Stats();
