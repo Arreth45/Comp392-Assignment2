@@ -99,12 +99,12 @@ function init() {
     // add controls
     gui = new GUI();
     var zoomIn = { add: function () {
-            camera.position = new Vector3(-13, 0, 0);
-            planet3.add(camera);
+            camera.position = new Vector3(0, 0, 0);
+            r3.add(camera);
             camera.lookAt(planet3.position);
         } };
     var zoomOut = { add: function () {
-            planet3.remove(camera);
+            r3.remove(camera);
             camera.position.x = -20;
             camera.position.y = 25;
             camera.position.z = 20;
