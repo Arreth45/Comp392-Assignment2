@@ -8,9 +8,10 @@
 module objects {
     // CONTROL CLASS ++++++++++++++++++++++++++++++++++++++++++
     export class Control { 
+        
         //PUBLIC INSTANCE VARIABLES +++++++++++++++++++++++++++ 
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++
-        constructor(public target:Text) {
+        constructor(public zoomIn:Function, zoomOut:Function) {
         }
         //PUBLIC METHODS +++++++++++++++++++++++++++++++++++++++
     }

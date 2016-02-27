@@ -1,5 +1,10 @@
 /// <reference path="_reference.ts"/>
 
+// Jake Parnell
+// Comp392 - Assignment 1
+// Last Modified by: Jake Parnell
+// Date Last Modified Feb 26th 2016
+
 import Scene = THREE.Scene;
 import Renderer = THREE.WebGLRenderer;
 import PerspectiveCamera = THREE.PerspectiveCamera;
